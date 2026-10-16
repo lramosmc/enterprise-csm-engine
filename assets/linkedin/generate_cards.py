@@ -1,8 +1,8 @@
 """
-Generates refined executive featured cards for LinkedIn and GitHub:
-- Card 1: Clean Architecture Flowchart diagram (Ports ➔ Core Engine ➔ Executive Output).
-- Card 2: 4-Stage Sequential Pipeline Process Flowchart (Hygiene ➔ Forecast ➔ Deal Governance ➔ QBRs).
-- Card 3: Executive Metric & KPI Cards for Power BI (The preferred analytics cockpit layout).
+Generates refined, visually distinct executive featured cards for LinkedIn and GitHub:
+- Card 1: Enterprise CSM Engine (The approved Emerald / Dark Slate System Architecture Flowchart).
+- Card 2: Sales Operations Playbooks (Distinct Deep Cobalt / Sapphire Blue Process Flowchart).
+- Card 3: Power BI Portfolio (Distinct Warm Amber / Gold Analytics Cockpit with Metric Cards).
 """
 
 import os
@@ -12,11 +12,18 @@ import time
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 EDGE_PATH = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
 
-COMMON_BASE_CSS = """
+# -----------------------------------------------------------------------------
+# CARD 1: ENTERPRISE CSM ENGINE (Approved Emerald / Dark Slate Architecture)
+# -----------------------------------------------------------------------------
+CARD_1_HTML = """<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     width: 1280px; height: 720px; overflow: hidden;
-    background: #090d16;
+    background: radial-gradient(circle at 85% 15%, #0d281e 0%, #081119 55%, #050a0f 100%);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
     color: #f8fafc; padding: 50px 64px; display: flex; flex-direction: column; justify-content: space-between;
     position: relative;
@@ -29,13 +36,33 @@ COMMON_BASE_CSS = """
   }
   .header { z-index: 1; }
   .tag {
-    display: inline-block;
-    background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12);
-    color: #94a3b8; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.4);
+    color: #34d399; font-size: 11px; font-weight: 700; text-transform: uppercase;
     letter-spacing: 1.5px; padding: 5px 12px; border-radius: 6px; margin-bottom: 14px;
   }
+  .tag-dot { width: 7px; height: 7px; border-radius: 50%; background: #10b981; }
   h1 { font-size: 42px; font-weight: 700; letter-spacing: -0.5px; color: #ffffff; line-height: 1.1; margin-bottom: 8px; }
+  h1 span { color: #34d399; }
   .subtitle { font-size: 18px; color: #94a3b8; font-weight: 400; max-width: 860px; line-height: 1.4; }
+
+  .flowchart-container {
+    z-index: 1; display: grid; grid-template-columns: 290px 48px 460px 48px 280px;
+    align-items: center; gap: 8px; margin: 18px 0;
+  }
+  .box {
+    background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px; padding: 20px 20px;
+  }
+  .box.core {
+    background: rgba(16, 185, 129, 0.05); border: 1.5px solid rgba(16, 185, 129, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  }
+  .box-label { font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+  .box-label.highlight { color: #34d399; }
+  .list { display: flex; flex-direction: column; gap: 9px; font-size: 13px; }
+  .item { display: flex; align-items: center; gap: 8px; color: #cbd5e1; }
+  .arrow { text-align: center; color: #34d399; font-size: 22px; font-weight: bold; opacity: 0.7; }
 
   .footer { z-index: 1; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 18px; }
   .badges-group { display: flex; gap: 10px; }
@@ -45,39 +72,13 @@ COMMON_BASE_CSS = """
   }
   .author { font-size: 13px; font-weight: 500; color: #64748b; }
   .author span { color: #cbd5e1; font-weight: 600; }
-"""
-
-# Card 1: Flowchart Architecture (Ports ➔ Core Cognitive Engine ➔ Executive Output)
-CARD_1_HTML = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<style>
-{COMMON_BASE_CSS}
-  .flowchart-container {{
-    z-index: 1; display: grid; grid-template-columns: 290px 48px 460px 48px 280px;
-    align-items: center; gap: 8px; margin: 18px 0;
-  }}
-  .box {{
-    background: rgba(17, 24, 39, 0.6); border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px; padding: 20px 20px;
-  }}
-  .box.core {{
-    background: rgba(17, 24, 39, 0.85); border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-  }}
-  .box-label {{ font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }}
-  .box-label.highlight {{ color: #e2e8f0; }}
-  .list {{ display: flex; flex-direction: column; gap: 9px; font-size: 13px; }}
-  .item {{ display: flex; align-items: center; gap: 8px; color: #cbd5e1; }}
-  .arrow {{ text-align: center; color: #475569; font-size: 22px; font-weight: bold; }}
 </style>
 </head>
 <body>
   <div class="grid-bg"></div>
   <div class="header">
-    <div class="tag">System Architecture</div>
-    <h1>Enterprise CSM Engine</h1>
+    <div class="tag"><div class="tag-dot"></div> System Architecture</div>
+    <h1>Enterprise CSM <span>Engine</span></h1>
     <div class="subtitle">Autonomous system engineered to streamline account governance, SLA tracking, and executive morning briefings.</div>
   </div>
 
@@ -129,35 +130,75 @@ CARD_1_HTML = f"""<!DOCTYPE html>
 </body>
 </html>"""
 
-# Card 2: 4-Stage Sequential Process Flowchart (Hygiene ➔ Forecast ➔ Execution ➔ QBRs)
-CARD_2_HTML = f"""<!DOCTYPE html>
+# -----------------------------------------------------------------------------
+# CARD 2: SALES OPERATIONS PLAYBOOKS (Distinct Deep Cobalt / Sapphire Blue)
+# -----------------------------------------------------------------------------
+CARD_2_HTML = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <style>
-{COMMON_BASE_CSS}
-  .pipeline-flow {{
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1280px; height: 720px; overflow: hidden;
+    background: radial-gradient(circle at 85% 15%, #173874 0%, #0c1c38 55%, #050b17 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+    color: #f8fafc; padding: 50px 64px; display: flex; flex-direction: column; justify-content: space-between;
+    position: relative;
+  }
+  .grid-bg {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+    background-size: 32px 32px; pointer-events: none;
+  }
+  .header { z-index: 1; }
+  .tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(59, 130, 246, 0.15); border: 1px solid rgba(59, 130, 246, 0.45);
+    color: #60a5fa; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.5px; padding: 5px 12px; border-radius: 6px; margin-bottom: 14px;
+  }
+  .tag-dot { width: 7px; height: 7px; border-radius: 50%; background: #3b82f6; }
+  h1 { font-size: 42px; font-weight: 700; letter-spacing: -0.5px; color: #ffffff; line-height: 1.1; margin-bottom: 8px; }
+  h1 span { color: #60a5fa; }
+  .subtitle { font-size: 18px; color: #94a3b8; font-weight: 400; max-width: 860px; line-height: 1.4; }
+
+  .pipeline-flow {
     z-index: 1; display: grid; grid-template-columns: 1fr 24px 1fr 24px 1fr 24px 1fr;
     align-items: center; gap: 4px; margin: 20px 0;
-  }}
-  .step-box {{
-    background: rgba(17, 24, 39, 0.6); border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+  .step-box {
+    background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(59, 130, 246, 0.2);
     border-radius: 12px; padding: 22px 18px; display: flex; flex-direction: column; justify-content: space-between;
     min-height: 200px;
-  }}
-  .step-num {{ font-size: 11px; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }}
-  .step-title {{ font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 12px; line-height: 1.2; }}
-  .step-items {{ display: flex; flex-direction: column; gap: 7px; font-size: 13px; color: #94a3b8; list-style: none; }}
-  .step-items li {{ display: flex; align-items: center; gap: 6px; }}
-  .step-items li::before {{ content: "•"; color: #475569; font-size: 14px; }}
-  .flow-arrow {{ text-align: center; color: #475569; font-size: 18px; font-weight: bold; }}
+  }
+  .step-num {
+    display: inline-block; background: rgba(59, 130, 246, 0.15); color: #60a5fa;
+    font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px;
+    padding: 3px 8px; border-radius: 4px; margin-bottom: 8px; width: fit-content;
+  }
+  .step-title { font-size: 16px; font-weight: 700; color: #ffffff; margin-bottom: 12px; line-height: 1.2; }
+  .step-items { display: flex; flex-direction: column; gap: 7px; font-size: 13px; color: #cbd5e1; list-style: none; }
+  .step-items li { display: flex; align-items: center; gap: 6px; }
+  .step-items li::before { content: "•"; color: #3b82f6; font-size: 14px; }
+  .flow-arrow { text-align: center; color: #3b82f6; font-size: 18px; font-weight: bold; opacity: 0.8; }
+
+  .footer { z-index: 1; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(59,130,246,0.15); padding-top: 18px; }
+  .badges-group { display: flex; gap: 10px; }
+  .badge {
+    background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.2);
+    color: #e2e8f0; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px;
+  }
+  .author { font-size: 13px; font-weight: 500; color: #64748b; }
+  .author span { color: #cbd5e1; font-weight: 600; }
 </style>
 </head>
 <body>
   <div class="grid-bg"></div>
   <div class="header">
-    <div class="tag">Commercial Governance</div>
-    <h1>Sales Operations Playbooks</h1>
+    <div class="tag"><div class="tag-dot"></div> Commercial Governance</div>
+    <h1>Sales Operations <span>Playbooks</span></h1>
     <div class="subtitle">Operational process frameworks for enterprise B2B sales cycles, forecast discipline, and pipeline health.</div>
   </div>
 
@@ -229,37 +270,73 @@ CARD_2_HTML = f"""<!DOCTYPE html>
 </body>
 </html>"""
 
-# Card 3: Metric & KPI Cards (The user's favorite layout)
-CARD_3_HTML = f"""<!DOCTYPE html>
+# -----------------------------------------------------------------------------
+# CARD 3: POWER BI PORTFOLIO (Distinct Warm Amber / Gold Analytics Cockpit)
+# -----------------------------------------------------------------------------
+CARD_3_HTML = """<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <style>
-{COMMON_BASE_CSS}
-  .cards-grid {{
-    z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr) 300px; gap: 16px; margin: 24px 0;
-  }}
-  .tile {{
-    background: rgba(17, 24, 39, 0.6); border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px; padding: 22px 20px; display: flex; flex-direction: column; justify-content: space-between;
-  }}
-  .tile-label {{ font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }}
-  .tile-main {{ font-size: 34px; font-weight: 700; color: #ffffff; margin-bottom: 6px; }}
-  .tile-desc {{ font-size: 13px; color: #94a3b8; line-height: 1.4; }}
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1280px; height: 720px; overflow: hidden;
+    background: radial-gradient(circle at 85% 15%, #3d2305 0%, #1c1103 55%, #0b0702 100%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", sans-serif;
+    color: #f8fafc; padding: 50px 64px; display: flex; flex-direction: column; justify-content: space-between;
+    position: relative;
+  }
+  .grid-bg {
+    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image: linear-gradient(rgba(245,158,11,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(245,158,11,0.03) 1px, transparent 1px);
+    background-size: 32px 32px; pointer-events: none;
+  }
+  .header { z-index: 1; }
+  .tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.45);
+    color: #fbbf24; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 1.5px; padding: 5px 12px; border-radius: 6px; margin-bottom: 14px;
+  }
+  .tag-dot { width: 7px; height: 7px; border-radius: 50%; background: #f59e0b; }
+  h1 { font-size: 42px; font-weight: 700; letter-spacing: -0.5px; color: #ffffff; line-height: 1.1; margin-bottom: 8px; }
+  h1 span { color: #fbbf24; }
+  .subtitle { font-size: 18px; color: #94a3b8; font-weight: 400; max-width: 860px; line-height: 1.4; }
 
-  .side-tile {{
-    background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.1);
+  .cards-grid {
+    z-index: 1; display: grid; grid-template-columns: repeat(3, 1fr) 300px; gap: 16px; margin: 24px 0;
+  }
+  .tile {
+    background: rgba(26, 17, 7, 0.65); border: 1px solid rgba(245, 158, 11, 0.2);
+    border-radius: 12px; padding: 22px 20px; display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .tile-label { font-size: 11px; font-weight: 700; color: #d97706; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+  .tile-main { font-size: 34px; font-weight: 700; color: #fbbf24; margin-bottom: 6px; }
+  .tile-desc { font-size: 13px; color: #cbd5e1; line-height: 1.4; }
+
+  .side-tile {
+    background: rgba(245, 158, 11, 0.05); border: 1px solid rgba(245, 158, 11, 0.3);
     border-radius: 12px; padding: 22px 20px; display: flex; flex-direction: column; justify-content: center;
-  }}
-  .side-title {{ font-size: 12px; font-weight: 700; color: #e2e8f0; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }}
-  .side-desc {{ font-size: 13px; color: #94a3b8; line-height: 1.5; }}
+  }
+  .side-title { font-size: 12px; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .side-desc { font-size: 13px; color: #cbd5e1; line-height: 1.5; }
+
+  .footer { z-index: 1; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid rgba(245,158,11,0.15); padding-top: 18px; }
+  .badges-group { display: flex; gap: 10px; }
+  .badge {
+    background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.2);
+    color: #e2e8f0; font-size: 12px; font-weight: 600; padding: 6px 14px; border-radius: 6px;
+  }
+  .author { font-size: 13px; font-weight: 500; color: #64748b; }
+  .author span { color: #cbd5e1; font-weight: 600; }
 </style>
 </head>
 <body>
   <div class="grid-bg"></div>
   <div class="header">
-    <div class="tag">Business Intelligence</div>
-    <h1>Power BI & Sales Analytics</h1>
+    <div class="tag"><div class="tag-dot"></div> Business Intelligence</div>
+    <h1>Power BI & <span>Sales Analytics</span></h1>
     <div class="subtitle">End-to-end sales analytics, DAX performance modeling, and automated executive decision cockpits for enterprise teams.</div>
   </div>
 
