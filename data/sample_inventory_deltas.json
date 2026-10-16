@@ -1,0 +1,30 @@
+{
+  "deltas": [
+    {
+      "service_id": "CKT-WAVE-9041",
+      "customer_name": "Apex Cloud Infrastructure",
+      "change_type": "NEW_ACTIVATION",
+      "timestamp": "2026-10-16T07:30:00",
+      "details": "100G Optical Wave turned up between Equinix SP4 and Ashburn DC2.",
+      "is_fiber": true
+    },
+    {
+      "service_id": "CKT-ETH-1120",
+      "customer_name": "Nexus Financial Systems",
+      "change_type": "DISCONNECTION",
+      "timestamp": "2026-10-15T19:00:00",
+      "details": "Legacy 1Gbps backup circuit turned down upon migration to 10Gbps cross-connect.",
+      "is_fiber": true
+    },
+    {
+      "service_id": "CKT-DIA-3304",
+      "customer_name": "Quantum Analytics",
+      "change_type": "BANDWIDTH_CHANGE",
+      "timestamp": "2026-10-16T06:15:00",
+      "old_value": "5 Gbps",
+      "new_value": "10 Gbps",
+      "details": "Bandwidth upgrade completed ahead of quarterly model training.",
+      "is_fiber": true
+    }
+  ]
+}

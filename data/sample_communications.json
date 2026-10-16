@@ -1,0 +1,26 @@
+{
+  "communications": [
+    {
+      "item_id": "COMM-1092",
+      "client_name": "Apex Cloud Infrastructure",
+      "sender": "noc-lead@apexcloud.internal",
+      "subject": "URGENT: Executive escalation regarding Subsea Ring 2 restoration timeline",
+      "timestamp": "2026-10-16T07:45:00",
+      "summary": "Customer Director of Infrastructure requesting hourly restoration updates and engineering incident report.",
+      "action_required": true,
+      "urgency": "Urgent",
+      "client_domain": "apexcloud.internal"
+    },
+    {
+      "item_id": "COMM-1088",
+      "client_name": "Nexus Financial Systems",
+      "sender": "procurement@nexusfinancial.com",
+      "subject": "Decommission confirmation for CKT-ETH-1120 billing stop",
+      "timestamp": "2026-10-15T20:10:00",
+      "summary": "Inquiring whether billing has officially stopped for the turned-down circuit.",
+      "action_required": true,
+      "urgency": "Normal",
+      "client_domain": "nexusfinancial.com"
+    }
+  ]
+}

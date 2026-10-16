@@ -1,0 +1,22 @@
+{
+  "runs": [
+    {
+      "timestamp": "2026-10-15T08:00:00",
+      "briefing_date": "2026-10-15",
+      "csm": "Luiz Ramos",
+      "open_incidents_count": 1,
+      "critical_alerts_count": 0,
+      "recent_deltas_count": 2,
+      "actions_count": 3
+    }
+  ],
+  "last_run": {
+    "timestamp": "2026-10-15T08:00:00",
+    "briefing_date": "2026-10-15",
+    "csm": "Luiz Ramos",
+    "open_incidents_count": 1,
+    "critical_alerts_count": 0,
+    "recent_deltas_count": 2,
+    "actions_count": 3
+  }
+}

@@ -1,0 +1,53 @@
+# Enterprise client portfolio configuration (Synthetic demonstration accounts)
+clients:
+  - id: "CLI-APEX-01"
+    name: "Apex Cloud Infrastructure"
+    vertical: "Cloud & Hyperscale"
+    priority: "Tier 1"
+    scope: "Global Optical Backbone"
+    domains:
+      - "apexcloud.internal"
+      - "apexinfra.net"
+    account_executives:
+      - "Sarah Jenkins"
+
+  - id: "CLI-NEXUS-02"
+    name: "Nexus Financial Systems"
+    vertical: "Banking & Financial Services"
+    priority: "Tier 1"
+    scope: "Low Latency Metro & Inter-DC"
+    domains:
+      - "nexusfinancial.com"
+      - "nexus-trading.net"
+    account_executives:
+      - "David Miller"
+
+  - id: "CLI-HORIZON-03"
+    name: "Horizon Telecommunications"
+    vertical: "Telecommunications & Carrier"
+    priority: "Tier 2"
+    scope: "IP Transit & Wavelengths"
+    domains:
+      - "horizontelecom.global"
+    account_executives:
+      - "Elena Rostova"
+
+  - id: "CLI-QUANTUM-04"
+    name: "Quantum Analytics"
+    vertical: "Big Data & AI Platforms"
+    priority: "Tier 2"
+    scope: "Dark Fiber & DIA"
+    domains:
+      - "quantum-ai.io"
+    account_executives:
+      - "Marcus Vance"
+
+  - id: "CLI-VANGUARD-05"
+    name: "Vanguard Media Network"
+    vertical: "Digital Media & Streaming"
+    priority: "Tier 2"
+    scope: "Content Delivery & CDN Transit"
+    domains:
+      - "vanguardstream.net"
+    account_executives:
+      - "Chloe Bennett"

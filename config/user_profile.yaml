@@ -1,0 +1,11 @@
+# Operator profile and environment storage paths
+csm:
+  name: "Luiz Ramos"
+  role: "Customer Success Manager"
+  segment: "Global Accounts & Infrastructure"
+  organization: "Global Enterprise Operations"
+
+paths:
+  vault_root: "output/vault"
+  data_dir: "data"
+  state_dir: "state"

@@ -1,0 +1,13 @@
+# System operational settings and SLA heuristic thresholds
+sla_thresholds:
+  max_mttr_hours: 4.0          # MTTR limit before automated SLA breach alert
+  outage_alert_hours: 2.0      # Outage duration before triggering executive escalation
+  chronic_flapping_threshold: 3 # Incident threshold for chronic flapping identification
+
+incident_rules:
+  p1_requires_immediate_escalation: true
+  p2_requires_operational_alignment: true
+
+briefing_defaults:
+  max_sticky_actions: 8
+  include_resolved_incidents_window_hours: 24
